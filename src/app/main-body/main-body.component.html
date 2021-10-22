@@ -1,7 +1,8 @@
 <section class="container">
   <ul class="products">
-    <li class="row" *ngFor="let product of products; index as i">
-      <div class="col left">
+    <li class="row" *ngFor="let item of products; index as i">
+      <app-product [product]="item" (removeProduct)="removeProduct($event)"></app-product>
+      <!-- <div class="col left">
         <div class="thumbnail">
           <a [href]="product.ref" target="_blank" and rel="noopener noreferrer">
             <img [src]="product.thumbnail" alt="" [attr.xxx]="i" />
@@ -32,14 +33,14 @@
             viewBox="0 0 60 60"
             enable-background="new 0 0 60 60"
             xml:space="preserve"
-            (click) = "removeProduct(product.id, xxx)"
+            (click) = "removeProduct($event, product.id, xxx)"
           >
             <polygon
               points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812 22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812"
             ></polygon>
           </svg>
         </div>
-      </div>
+      </div> -->
     </li>
   </ul>
 </section>

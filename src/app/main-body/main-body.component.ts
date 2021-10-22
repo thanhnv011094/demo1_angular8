@@ -22,9 +22,9 @@ export class MainBodyComponent implements OnInit {
     });
   }
 
-  removeProduct(id: number, element: any) {
-    console.log(element);
-    const index = this.products.findIndex((x) => x.id == id);
+  removeProduct($event) {
+    console.log($event);
+    const index = this.products.findIndex((x) => x.id == $event.id);
     if (index > -1) {
       this.products.splice(index, 1);
     }
